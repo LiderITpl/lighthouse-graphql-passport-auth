@@ -21,11 +21,11 @@ class Register extends BaseAuthResolver
     {
         $userModel = app(config('auth.providers.users.model'));
         $regCodeModel = app(config('auth.providers.regCodes.model'));
-        $regCode = $regCodeModel::where("code", "TESTCASE")->first();
+        $regCode = $regCodeModel::where("code", strtoupper($args["adm_code"]))->first();
         if($regCode === null) {
           throw new InvalidRegCodeException();
         }
-        $input = collect($args)->except('password_confirmation')->toArray();
+        $input = collect($args)->except(['password_confirmation', 'adm_code'])->toArray();
         $input['password'] = bcrypt($input['password']);
         $userModel->fill($input);
         $userModel->save();

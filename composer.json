@@ -1,5 +1,5 @@
 {
-    "name": "joselfonseca/lighthouse-graphql-passport-auth",
+    "name": "liderit/lighthouse-graphql-passport-auth",
     "description": "Add GraphQL types and mutations for login and recover password functionalities",
     "keywords": ["laravel", "GraphQL", "lighthouse", "passport-auth"],
     "type": "library",
@@ -8,6 +8,10 @@
         {
             "name": "Jose Luis Fonseca",
             "email": "jose@ditecnologia.com"
+        },
+        {
+            "name": "Arek Nurzyński",
+            "email": "arek@liderit.pl"
         }
     ],
     "require": {
